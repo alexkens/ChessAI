@@ -1,11 +1,11 @@
 package board;
 
+import board.Token.Token;
 
 public class Board {
 
 
     Token[] board = new Token[64];
-
 
 
     public Board() {
