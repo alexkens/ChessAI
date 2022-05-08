@@ -4,7 +4,7 @@ import src.enums.Color;
 
 public class Token {
     
-    boolean free = true;
+    public boolean free = true;
     public Color color;
 
 

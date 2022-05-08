@@ -2,6 +2,7 @@ package src.userInterface;
 
 import src.board.Board;
 import src.board.Token.Token;
+import src.board.move.Move;
 import src.enums.Color;
 import src.game.Game;
 
@@ -26,7 +27,12 @@ public class userInterface {
             System.out.println("wrong color");
             return;
         }
-        
+        if(token.free) {
+            System.out.println("field is empty");
+        }
+
+        Move move = new Move();
+
     }
     
 }
