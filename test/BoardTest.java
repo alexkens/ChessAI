@@ -53,4 +53,14 @@ public class BoardTest {
 
         board.toString();
     }
+
+    @Test
+    public void test3() {
+        int s1 = Board.fieldToNumber("a4"); // 24
+        int s2 = Board.fieldToNumber("e4"); // 28
+        int s3 = Board.fieldToNumber("h8"); // 63
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+    }
 }

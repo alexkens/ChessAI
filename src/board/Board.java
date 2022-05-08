@@ -57,4 +57,38 @@ public class Board {
         return str;
     }
 
+    public static String numberToField(int intField) {
+        intField++;
+        if(intField < 1 || intField > 64) {
+          return "Error";
+        }
+        int counter = 1;
+        while(intField > 8) {
+          intField = intField - 8;
+          counter++;
+        }
+        String array[] = new String[] { "a", "b", "c", "d", "e", "f", "g", "h" };
+        StringBuilder stringField = new StringBuilder("");
+        stringField.append(array[intField-1]);
+        stringField.append(counter);
+    
+        return stringField.toString();
+      }
+
+    public static int fieldToNumber(String field) {
+        int number = -1;
+
+        String array[] = new String[] { "a", "b", "c", "d", "e", "f", "g", "h" };
+        for(int i=0; i < 8; i++) {
+            if(field.charAt(0) == array[i].charAt(0)) {
+                number = i;
+                break;
+            }
+        }
+        int tmp = Character.getNumericValue(field.charAt(1));
+        tmp = (tmp - 1) * 8;
+        
+        return number + tmp;
+    }
+
 }
