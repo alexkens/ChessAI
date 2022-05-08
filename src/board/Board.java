@@ -58,7 +58,7 @@ public class Board {
 
         Move move = new Move(Board.fieldToNumber(startField), Board.fieldToNumber(endField));
         this.moveList.add(move);
-
+        this.setToken(token, Board.fieldToNumber(endField));
     }
 
 
