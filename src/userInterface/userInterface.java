@@ -22,18 +22,7 @@ public class userInterface {
     }
 
     public void makeMove(String startField, String endField) {
-        Token token = this.game.board.board[Board.fieldToNumber(startField)];
-        if(token.color != this.userColor) {
-            System.out.println("wrong color");
-            return;
-        }
-        if(token.free) {
-            System.out.println("field is empty");
-        }
-
-        Move move = new Move(Board.fieldToNumber(startField), Board.fieldToNumber(endField));
-        this.game.board.moveList.add(move);
-
+        this.game.board.makeMove(startField, endField, this.userColor);
     }
     
 }

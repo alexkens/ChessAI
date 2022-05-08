@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import src.board.Token.Token;
 import src.board.move.Move;
+import src.enums.Color;
 
 public class Board {
 
@@ -42,6 +43,21 @@ public class Board {
             this.board[pos] = token;
             return;
         }
+
+    }
+
+    public void makeMove(String startField, String endField, Color userColor) {
+        Token token = this.board[Board.fieldToNumber(startField)];
+        if(token.color != userColor) {
+            System.out.println("wrong color");
+            return;
+        }
+        if(token.free) {
+            System.out.println("field is empty");
+        }
+
+        Move move = new Move(Board.fieldToNumber(startField), Board.fieldToNumber(endField));
+        this.moveList.add(move);
 
     }
 
