@@ -93,6 +93,10 @@ public class Board {
         int tmp = Character.getNumericValue(field.charAt(1));
         tmp = (tmp - 1) * 8;
 
+        if(number < 0 || number > 7 || tmp < 0 || tmp > 56) {
+            System.out.println("wrong input");
+        }
+
         return number + tmp;
     }
 
