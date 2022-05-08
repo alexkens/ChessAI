@@ -1,7 +1,7 @@
-package game;
+package src.game;
 
-import enums.*;
-import board.Board;
+import src.enums.*;
+import src.board.Board;
 
 public class Game {
 
