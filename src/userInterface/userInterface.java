@@ -6,12 +6,12 @@ import src.board.move.Move;
 import src.enums.Color;
 import src.game.Game;
 
-public class userInterface {
+public class UserInterface {
 
-    Color userColor;
-    Game game;
+    public Color userColor;
+    public Game game;
 
-    public userInterface(Color color) {
+    public UserInterface(Color color) {
         this. userColor = color;
     }
     
@@ -26,3 +26,4 @@ public class userInterface {
     }
     
 }
+
