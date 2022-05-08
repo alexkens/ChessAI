@@ -3,7 +3,6 @@ package src.board.Token;
 import src.enums.Color;
 
 public class Knight extends Token {
-    protected Color color;
     protected String colorStr;
     
     public Knight(Color color) {

@@ -37,6 +37,11 @@ public class Board {
         return fen.toString();
     }
 
+
+
+
+
+
     public String toString() {
         String str = new String();
 
@@ -87,7 +92,7 @@ public class Board {
         }
         int tmp = Character.getNumericValue(field.charAt(1));
         tmp = (tmp - 1) * 8;
-        
+
         return number + tmp;
     }
 

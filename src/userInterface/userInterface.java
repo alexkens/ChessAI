@@ -1,11 +1,14 @@
 package src.userInterface;
 
+import src.board.Board;
+import src.board.Token.Token;
 import src.enums.Color;
 import src.game.Game;
 
 public class userInterface {
 
     Color userColor;
+    Game game;
 
     public userInterface(Color color) {
         this. userColor = color;
@@ -13,8 +16,17 @@ public class userInterface {
     
 
     public void startGame() {
-        Game newGame = new Game();
+        this.game = new Game();
 
+    }
+
+    public void makeMove(String startField, String endField) {
+        Token token = this.game.board.board[Board.fieldToNumber(startField)];
+        if(token.color != this.userColor) {
+            System.out.println("wrong color");
+            return;
+        }
+        
     }
     
 }
