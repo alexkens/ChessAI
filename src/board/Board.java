@@ -8,13 +8,12 @@ public class Board {
     public Token[] board = new Token[64];
 
 
+
     public Board() {
         for(int i=0; i < 64; i++) {
             this.board[i] = new Token();
         }
     }
-
-
 
 
     public void setToken(Token token, int pos) {
@@ -23,7 +22,7 @@ public class Board {
 
 
 
-    public Board convertFenToGame(String fen) {
+    public static Board convertFenToGame(String fen) {
 
         Board board = new Board();
 
@@ -31,7 +30,7 @@ public class Board {
         return board;
     }
 
-    public String convertBoardToFen() {
+    public static String convertBoardToFen(Board board) {
 
         StringBuilder fen = new StringBuilder();
 
