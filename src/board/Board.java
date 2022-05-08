@@ -10,11 +10,12 @@ public class Board {
 
 
     public Token[] board = new Token[64];
-    public ArrayList<Move> moveList;
 
-    public ArrayList<Integer> wMoveList = new ArrayList<Integer>();
-    public ArrayList<Integer> bMoveList = new ArrayList<Integer>();
+    public ArrayList<Move> moveHistory = new ArrayList<Move>();
+    public ArrayList<Move> wMoveHistory = new ArrayList<Move>();
+    public ArrayList<Move> bMoveHistory = new ArrayList<Move>();
 
+    // available Moves
     public ArrayList<Integer> wPawnList = new ArrayList<Integer>();
     public ArrayList<Integer> wRookList = new ArrayList<Integer>();
     public ArrayList<Integer> wKnightList = new ArrayList<Integer>();
@@ -43,7 +44,10 @@ public class Board {
             this.board[pos] = token;
             return;
         }
+    }
 
+    public void removeToken(int pos) {
+        this.board[pos] = new Token();
     }
 
     public void makeMove(String startField, String endField, Color userColor) {
@@ -56,9 +60,15 @@ public class Board {
             System.out.println("field is empty");
         }
 
-        Move move = new Move(Board.fieldToNumber(startField), Board.fieldToNumber(endField));
-        this.moveList.add(move);
         this.setToken(token, Board.fieldToNumber(endField));
+        Move move = new Move(Board.fieldToNumber(startField), Board.fieldToNumber(endField));
+        this.moveHistory.add(move);
+        if(userColor == Color.WHITE) {
+            this.wMoveHistory.add(move);
+        } else {
+            this.bMoveHistory.add(move);
+        }
+        this.removeToken(Board.fieldToNumber(startField));
     }
 
 

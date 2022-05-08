@@ -11,6 +11,8 @@ public class UserInterfaceTest {
     public void test1() {
         UserInterface ui = new UserInterface(Color.WHITE);
         ui.startGame();
+        ui.makeMove("a2", "a3");
+        ui.makeMove("e2", "e4");
         ui.game.board.toString();
     }
     
