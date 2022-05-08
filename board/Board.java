@@ -7,6 +7,7 @@ public class Board {
     Token[] board = new Token[64];
 
 
+
     public Board() {
 
 
@@ -14,6 +15,10 @@ public class Board {
 
 
 
+
+    public void setToken(Token token, int pos) {
+        this.board[pos] = token;
+    }
 
 
 
