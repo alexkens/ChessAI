@@ -1,12 +1,33 @@
 package src.board;
 
+import java.util.ArrayList;
+
 import src.board.Token.Token;
+import src.board.move.Move;
 
 public class Board {
 
 
     public Token[] board = new Token[64];
+    public ArrayList<Move> moveList;
 
+    public ArrayList<Integer> wMoveList = new ArrayList<Integer>();
+    public ArrayList<Integer> bMoveList = new ArrayList<Integer>();
+
+    public ArrayList<Integer> wPawnList = new ArrayList<Integer>();
+    public ArrayList<Integer> wRookList = new ArrayList<Integer>();
+    public ArrayList<Integer> wKnightList = new ArrayList<Integer>();
+    public ArrayList<Integer> wBishopList = new ArrayList<Integer>();
+    public ArrayList<Integer> wKingList = new ArrayList<Integer>();
+    public ArrayList<Integer> wQueenList = new ArrayList<Integer>();
+    
+    
+    public ArrayList<Integer> bPawnList = new ArrayList<Integer>();
+    public ArrayList<Integer> bRookList = new ArrayList<Integer>();
+    public ArrayList<Integer> bKnightList = new ArrayList<Integer>();
+    public ArrayList<Integer> bBishopList = new ArrayList<Integer>();
+    public ArrayList<Integer> bKingList = new ArrayList<Integer>();
+    public ArrayList<Integer> bQueenList = new ArrayList<Integer>();
 
 
     public Board() {
@@ -17,11 +38,16 @@ public class Board {
 
 
     public void setToken(Token token, int pos) {
-        this.board[pos] = token;
+        if(this.board[pos].free) {
+            this.board[pos] = token;
+            return;
+        }
+
     }
 
 
 
+    // TODO
     public static Board convertFenToGame(String fen) {
 
         Board board = new Board();
@@ -30,16 +56,13 @@ public class Board {
         return board;
     }
 
+    // TODO
     public static String convertBoardToFen(Board board) {
 
         StringBuilder fen = new StringBuilder();
 
         return fen.toString();
     }
-
-
-
-
 
 
     public String toString() {
@@ -62,6 +85,7 @@ public class Board {
         return str;
     }
 
+
     public static String numberToField(int intField) {
         intField++;
         if(intField < 1 || intField > 64) {
@@ -79,6 +103,7 @@ public class Board {
     
         return stringField.toString();
       }
+
 
     public static int fieldToNumber(String field) {
         int number = -1;

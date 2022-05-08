@@ -31,7 +31,8 @@ public class userInterface {
             System.out.println("field is empty");
         }
 
-        Move move = new Move();
+        Move move = new Move(Board.fieldToNumber(startField), Board.fieldToNumber(endField));
+        this.game.board.moveList.add(move);
 
     }
     
