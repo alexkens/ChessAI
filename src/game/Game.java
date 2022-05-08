@@ -47,8 +47,28 @@ public class Game {
 
     }
 
-    
+    public void makeMove(String startField, String endField, Color userColor) {
+        this.board.makeMove(startField, endField, userColor);
+        this.halfMoveCounter++;
+        if(this.turn == Color.BLACK) {
+            this.wholeMoveCounter++;
+        }
 
+
+        this.checkWinner();
+
+        if(winW) {
+            System.out.println("White is winner");
+        }
+        if(winB) {
+            System.out.println("Black is winner");
+        }
+    }
+
+    // TODO
+    public void checkWinner() {
+
+    }
 
     
     

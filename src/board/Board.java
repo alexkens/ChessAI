@@ -69,6 +69,8 @@ public class Board {
             this.bMoveHistory.add(move);
         }
         this.removeToken(Board.fieldToNumber(startField));
+
+        
     }
 
 
