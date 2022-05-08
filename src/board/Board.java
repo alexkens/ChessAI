@@ -12,7 +12,6 @@ public class Board {
         for(int i=0; i < 64; i++) {
             this.board[i] = new Token();
         }
-
     }
 
 
@@ -42,13 +41,18 @@ public class Board {
     public String toString() {
         String str = new String();
 
+        System.out.println("  ABCDEFGH");
+
         int offset = 56;
+        int counter = 8;
         while(offset >= 0) {
+            System.out.print(counter + " ");
             for(int i=0; i < 8; i++) {
-                System.out.print(this.board[offset + i]);
-                offset = offset - 8;
+                System.out.print(this.board[offset + i].toString());
             }
+            offset = offset - 8;
             System.out.println();
+            counter--;
         }
 
         return str;

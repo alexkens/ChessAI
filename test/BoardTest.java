@@ -11,7 +11,7 @@ public class BoardTest {
     public void test1() {
 
         Board board = new Board();
-        board.board[0].toString();
+        board.toString();
 
     }
 }
